@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Movie from "./components/Movie.js";
 
@@ -34,7 +35,7 @@ function App() {
 	// };
 
 	const getMovies = async (API) => {
-		const res = await axios.get(API);
+		const response = await axios.get(API);
 		let data = response.data;
 		setMovies(data.results);
 	};
