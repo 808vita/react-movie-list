@@ -1,3 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
+	background-color: #22254b;
+	color: white;
+	font-family: sans-serif;
 	margin: 0;
+}
+
+header {
+	background-color: #373b69;
+	padding: 1rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.search {
+	background-color: transparent;
+	color: white;
+	border: 2px solid #22254b;
+	border-radius: 50px;
+	font-size: 1.2em;
+	padding: 0.5rem 1rem;
+}
+
+.search:focus {
+	outline: 0;
+}
+
+.movie-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.movie {
+	background-color: #373b69;
+	margin: 1rem;
+	width: 300px;
+	border-radius: 3px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	position: relative;
+}
+
+.movie img {
+	object-fit: cover;
+	height: 450px;
+	width: 100%;
+}
+
+.movie-info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+
+.movie-info h3 {
+	margin: 0;
+}
+
+.movie-over {
+	background-color: #fff;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+	color: #22254b;
+	padding: 1rem;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+	max-height: 100%;
+	transform: translatey(102%);
+	transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-over {
+	transform: translatey(0%);
+}
+
+.tag {
+	background-color: #22254b;
+	border-radius: 5px;
+	padding: 0.5rem;
+	font-weight: bold;
 }
