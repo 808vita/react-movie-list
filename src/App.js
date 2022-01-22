@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Movie from "./components/Movie";
 
-const featuredMovies = `https://api.themoviedb.org/3/discover/movie?sort_by=popularty.desc&api_key=${process.env.REACT_APP_API_KEY}`;
-
-const searchMovies = `https://api.themoviedb.org/3/search/movie?&api_key=${process.env.REACT_APP_API_KEY}&query=`;
+const featuredMovies = "/featured";
+const searchMovies = "/search/";
 
 function App() {
 	const [movies, setMovies] = useState([]);
@@ -26,12 +25,18 @@ function App() {
 		getMovies(featuredMovies);
 	}, []);
 
-	const getMovies = (API) => {
-		fetch(API)
-			.then((res) => res.json())
-			.then((data) => {
-				setMovies(data.results);
-			});
+	// const getMovies = (API) => {
+	// 	fetch(API)
+	// 		.then((res) => res.json())
+	// 		.then((data) => {
+	// 			setMovies(data.results);
+	// 		});
+	// };
+
+	const getMovies = async (API) => {
+		const res = await axios.get(API);
+		let data = response.data;
+		setMovies(data.results);
 	};
 
 	return (
