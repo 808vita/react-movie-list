@@ -5,11 +5,18 @@ const moviePoster = "https://image.tmdb.org/t/p/w1280";
 const Movie = ({ title, poster_path, overview, vote_average }) => {
 	return (
 		<div className="movie">
-			<img src={moviePoster + poster_path} alt={title} />
+			<img
+				src={
+					poster_path
+						? moviePoster + poster_path
+						: "https://avatars.githubusercontent.com/u/97225946?v=4"
+				}
+				alt={title}
+			/>
 
 			<div className="movie-info">
 				<h3>{title}</h3>
-				<span>{vote_average}</span>
+				<span className="tag">{vote_average}</span>
 			</div>
 			<div className="movie-over">
 				<h2>Overview:</h2>

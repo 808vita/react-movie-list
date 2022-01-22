@@ -17,23 +17,22 @@ function App() {
 		e.preventDefault();
 
 		if (searchTerm) {
-			fetch(`${searchMovies}${searchTerm}`)
-				.then((res) => res.json())
-				.then((data) => {
-					setMovies(data.results);
-				});
-
+			getMovies(`${searchMovies}${searchTerm}`);
 			setSearchTerm("");
 		}
 	};
 
 	useEffect(() => {
-		fetch(featuredMovies)
+		getMovies(featuredMovies);
+	}, []);
+
+	const getMovies = (API) => {
+		fetch(API)
 			.then((res) => res.json())
 			.then((data) => {
 				setMovies(data.results);
 			});
-	}, []);
+	};
 
 	return (
 		<>

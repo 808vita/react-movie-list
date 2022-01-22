@@ -31,6 +31,7 @@ header {
 
 .movie-container {
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 }
 
@@ -78,4 +79,11 @@ header {
 
 .movie:hover .movie-over {
 	transform: translatey(0%);
+}
+
+.tag {
+	background-color: #22254b;
+	border-radius: 5px;
+	padding: 0.5rem;
+	font-weight: bold;
 }
